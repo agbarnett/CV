@@ -1,0 +1,686 @@
+% see http://users.isr.ist.utl.pt/~mbayat/hacks/configure-multibib-package-with-texstudio/
+% CV
+\documentclass[a4paper,11pt]{article}
+\usepackage{graphicx} % For graphics
+\usepackage{epstopdf}
+\usepackage{grffile}
+\usepackage[resetlabels]{multibib} % For multiple reference lists
+\usepackage{anysize} % margins
+\usepackage{color}
+\usepackage{eurosym} % for Euro symbol
+\usepackage{fancybox} % For boxed key
+\usepackage{hyperref} % URL references
+\usepackage{bibspacing} % spacing between references
+\setlength{\bibspacing}{\baselineskip} % spacing between references
+\marginsize{2.5cm}{2cm}{2cm}{2cm} % margins, {left}{right}{top}{bottom}
+\setlength\parskip{0.02cm} % change the gap between paragraphs
+
+\markboth{Adrian Barnett - Curriculum Vitae}{Adrian Barnett - Curriculum Vitae}
+
+%%% change sections %%%
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries\color{blue}}}
+\makeatother
+\makeatletter
+%%% change subsections %%%
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                       {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                       {1.5ex \@plus .2ex}%
+                                   {\normalfont\normalsize\bfseries\color{blue}}}
+\makeatother
+
+%%% change bullets %%%
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\star$}
+%\usepackage{tweaklist}
+%\renewcommand{\enumhook}{\setlength{\topsep}{0pt}%
+%  \setlength{\itemsep}{0pt}}
+
+% re-arrange order here to get multiple bibtex
+\newcites{papers}{Peer-reviewed papers}
+%\newcites{other}{Other} % merged with blogs
+\newcites{blogs}{Blogs/Other}
+\newcites{letters}{Editorials/Letters}
+\newcites{books}{Books}
+\newcites{conf}{Conference papers (published abstract)}
+\newcites{reports}{Reports}
+%\newcites{confpres}{Conference presentations (abstract not published; given by me when I am first author)} % stopped updating
+%\newcites{review}{Papers under review}
+%\newcites{prep}{Papers in preparation}
+\newcites{chapters}{Book chapters}
+
+\pagestyle{myheadings}
+
+%
+\begin{document}
+\begin{raggedright}
+
+%%% This is just to get the ordering of the publications
+\nociteconf{c0,c1,c2,c3,c4,c5,c6,c7,c8}
+\nocitebooks{b3,b1}
+\nocitepapers{
+a56,a1,a55,a54, % 1990s
+a39, %2001
+a45,a46, %2002
+a30, %2003
+a5,a6,a50, %2004
+a2,a7,a8,a14,a15,a17,a24,a41,a51,a53, %2005
+a16, %2006
+a3,a13,a21,a23,a35,a42,a43,a52, %2007
+a9,a19,a26,a38,a49, %2008
+a4,a20,a22,a25,a27,a28,a29,a31,a32,a33,a36,a37,a40,a44,a47,a48,a57, %2009
+a18,a12,a34,a58,a59,a60,a61,a62,a63,a65,a66,a67, %2010
+a68,a69,a64,a70,a71,a72,a73,a74,a75,a76,a77,a80,a81,a83,a84,a85,a88,a87, %2011
+a78,a79,a82,a86,a89,a91,a92,a93,a94,a95,a96,a98,a99,a100,a101,a102,a103,a109,a110,a111,a114,a116,a117,a118, %2012 (25)
+a115,a90,a113,a104,a107,a97,a106,a112,a119,a120,a121,a123,a105,a124,a125,a126,a127,a131,a132,a135,akate, % 2013 (20)
+a128,a129,a130,a133,a134,a136,a137,a138,a139,a140,a141,a142,a143,a144,a147,a148,a151,HAQ, % 2014
+a145,a149,a154,a150,a122,a152,a153,a155,a156,a157,a146,a158,a159,a160,a162,a163,a164,a167,a168,a170,a171, % 2015
+a166,a161,a165,a172,a173,a174,a175,a176,a169,a177,a178,a179,a180,a181,a182,a183,a184,a187,a188,a190, %2016
+a185,a189,a191,a192,a193,a186,a194,a195,a196,a197,a198,a199,a200,a201,a202,a203,a204,a205,a207,a207b,o7,a208, %2017
+a206,a209,a210,a211,a212,a213,a214,a215,a216,a217,a218,a219,a220,a221,a222,a223,a224,a225,a226,a227,a229,a231,a239, % 2018
+a228,a232,a234,a230,a235,a236,a237,a238,a239,a240,a241,a242,a243,a244,a245,a246,a247,a248}  % 2019
+\nociteletters{e1,e2,e3,e4,e5,e6,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,e19,o11,o17,e20,e22,e21}
+%\nociteconfpres{cn1,cn2,cn3,cn4,cn5,cn6,cn7,cn8,cn9,cn10,cn11,cn12,cn13,cn14,cn15,cn16,cn17,cn18,cn19} % stopped updating
+\nocitereports{rep1}
+\nociteblogs{o1,o2,o3,o4,o5,o6,o8,o9,o10,o12,o14,o15,bl1,o18,bl2,bl2b,bl2c,bl3,bl4,bl5,bl6,bl7,bl8,bl9,bl10,bl11,bl12,bl13,bl14,bl15,bl16,bl19,bl17,bl18,bl20,bl21,bl22,bl23}
+
+%%%%%%%%%
+
+\begin{center}
+\textbf{\Large{CURRICULUM VITAE}}
+
+\textbf{Adrian Gerard Barnett} PhD, BSc (Hons), AStat
+
+Updated \today
+\end{center}
+
+%%%%%%%%%%% Personal information %%%%%%%%%%%
+
+\section{Personal information}
+
+%\subsection{Contact details}
+
+Tel (work): 07-3138 6010, Fax: 07-3138 6030,
+E-mail: a.barnett$<$at$>$qut.edu.au
+
+ORCID: 0000-0001-6339-0374
+
+Born: Jan 1973, Northampton, England. Nationalities: British, Australian. Sex: Male
+
+\subsection{Education and degrees}
+
+%List: academic qualifications held further study being undertaken towards additional qualifications (if any).
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.1\baselineskip}
+\item PhD Mathematics: University of Queensland, December 2002: \href{https://eprints.qut.edu.au/100141/}{``On the use of the bispectrum to detect and model non-linearity''}
+\begin{list}{\labelitemii}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.2\baselineskip}
+\item Dean's commendation list for Outstanding Research Higher Degree Theses
+\item Dean of Engineering, Physical Sciences and Architecture Annual Award for the best PhD
+\item Supervised by Prof Rodney Wolff
+\end{list}
+\item Bachelor of Science in Statistics, First Class with Honours: University College London, 1994
+\begin{list}{\labelitemii}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.2\baselineskip}
+\item Honours project supervised by Prof Philip Dawid
+\end{list}
+\end{list}
+
+\subsection{Employment}
+
+\textbf{Professor}: Institute of Health and Biomedical Innovation \& School of Public Health, Queensland University of Technology, Feb~2017 to present
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item \textbf{Associate Professor}: Institute of Health and Biomedical Innovation \& School of Public Health, Queensland University of Technology, Aug~2010 to Feb~2017
+
+\item \textbf{Senior Lecturer in Biostatistics}: Institute of Health and Biomedical Innovation \& School of Public Health, Queensland University of Technology, Nov~2007 to Aug~2010
+
+\item \textbf{Senior Lecturer in Biostatistics}: School of Population Health, University of Queensland, Jan~2006 to Nov~2007
+
+\item \textbf{Statistician}: Interesource, Jun~2005 to Dec~2005
+
+\item \textbf{Research Fellow}: School of Population Health, University of Queensland, Apr~2002 to Jan~2006 (year's leave of absence 2005)
+
+\item \textbf{Statistician (part-time)}: Centre for Health Promotion and Cancer Prevention Research, University of Queensland, Sep~2001 to Apr~2002
+
+\item \textbf{Tutor in Mathematics and Statistics (part-time)}: Queensland University of Technology, Mar~1999 to Jun~2000
+
+\item \textbf{Lecturer in Statistical Inference (part-time)}: Queensland University of Technology, Aug to Sep~1999
+
+%\item \textbf{Doctor of Philosophy}: School of Mathematics, University of Queensland, Mar 1999 to Apr 2002, supervisor Dr Rodney Wolff
+
+\item \textbf{SAS programmer}: SmithKline Beecham, Nov~1998 to Mar~1999
+
+\item \textbf{Statistician}: Medical Research Council, Wolfson Institute of Preventive Medicine, Jan~1996 to Nov~1998
+
+\item \textbf{Statistician}: SmithKline Beecham, Sep~1994 to Jan~1996
+\end{list}
+
+\section{Research}
+
+\subsection{Publications}
+
+% tried \arabic{citetotal}
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item I have 248 peer-reviewed publications, 2~books and 1~book chapter.
+\item My h-index is 63 for Google scholar.
+%\item My h-index is 39 for Scopus
+\item 22 of my papers have more than 100 citations.
+\item I never accept gift authorship and have made an important contribution to all my publications. As a statistician I have often helped colleagues with analyses, in these cases I ask that I am mentioned in the acknowledgements.
+\end{list}
+
+% Box
+\newenvironment{fminipage}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\fbox{\TheSbox}}
+
+% Books
+\label{booksstart}
+\nocitebooks{b3,b1}
+\bibliographystylebooks{cj}
+\bibliographybooks{papers}\setlength{\itemsep}{-2mm}
+\label{booksstop}
+
+\begin{tabular}{|cp{0.1cm}c|}\hline
+\multicolumn{3}{|c|}{\textbf{Book covers}}\\
+\includegraphics[height=6.6cm,width=4.5cm,angle=0]{season_book.eps} & & \includegraphics[height=6.6cm,width=4.5cm,angle=0]{glm_book.eps}\\
+\hline
+\end{tabular}
+
+% Book chapters
+\nocitechapters{b2,b4}
+\bibliographystylechapters{cj}
+\bibliographychapters{papers}
+
+% Articles (cite in order of date)
+\label{papersstart}
+\nocitepapers{
+a56,a1,a55,a54, % 1990s
+a39, %2001
+a45,a46, %2002
+a30, %2003
+a5,a6,a50, %2004
+a2,a7,a8,a14,a15,a17,a24,a41,a51,a53, %2005
+a16, %2006
+a3,a13,a21,a23,a35,a42,a43,a52, %2007
+a9,a19,a26,a38,a49, %2008
+a4,a20,a22,a25,a27,a28,a29,a31,a32,a33,a36,a37,a40,a44,a47,a48,a57, %2009
+a18,a12,a34,a58,a59,a60,a61,a62,a63,a65,a66,a67, %2010
+a68,a69,a64,a70,a71,a72,a73,a74,a75,a76,a77,a80,a81,a83,a84,a85,a88,a87, %2011
+a78,a79,a82,a86,a89,a91,a92,a93,a94,a95,a96,a98,a99,a100,a101,a102,a103,a109,a110,a111,a114,a116,a117,a118, %2012
+a115,a90,a113,a104,a107,a97,a106,a112,a119,a120,a121,a123,a105,a124,a125,a126,a127,a131,a132,a135,akate, % 2013
+a128,a129,a130,a133,a134,a136,a137,a138,a139,a140,a141,a142,a143,a144,a147,a148,a151,HAQ, % 2014
+a145,a149,a154,a150,a122,a152,a153,a155,a156,a157,a146,a158,a159,a160,a162,a163,a164,a167,a168,a170,a171, % 2015
+a166,a161,a165,a172,a173,a174,a175,a176,a169,a177,a178,a179,a180,a181,a182,a183,a184,a187,a188,a190, % 2016
+a185,a189,a191,a192,a193,a186,a194,a195,a196,a197,a198,a199, %2017
+a185,a189,a191,a192,a193,a186,a194,a195,a196,a197,a198,a199,a200,a201,a202,a203,a204,a205,a207,a207b,o7,a208, %2017
+a206,a209,a210,a211,a212,a213,a214,a215,a216,a217,a218,a219,a220,a221,a222,a223,a224,a225,a226,a227,a229,a231,a239,% 2018
+a228,a232,a234,a230,a235,a236,a236,a237,a238,a239,a240,a241,a242,a243,a244,a245,a246,a247,a248}  % 2019
+\bibliographystylepapers{cj}
+\bibliographypapers{papers}
+\label{papersstop}
+
+% Letters
+\nociteletters{e4,e5,e6,e1,e2,e3,e7,e8,e9,e10,e11,e12,e13,e14,e15,e16,e17,e18,e19,o11,o17,e20,e22,e21}
+\bibliographystyleletters{cj}
+\bibliographyletters{papers}
+
+% Conferences
+\nociteconf{c0,c1,c2,c3,c4,c5,c6,c7,c8,c9}
+\bibliographystyleconf{cj}
+\bibliographyconf{papers}
+
+% Conferences (no abstract) % stopped updating
+%\nociteconfpres{cn1,cn2,cn3,cn4,cn5,cn6,cn7,cn8,cn9,cn10,cn11,cn12,cn13,cn14,cn15,cn16,cn17,cn18,cn19}
+%\bibliographystyleconfpres{cj}
+%\bibliographyconfpres{papers}
+
+% reports
+\nocitereports{rep1}
+\bibliographystylereports{cj}
+\bibliographyreports{papers}
+
+% blogs - added september 2016
+\nociteblogs{o1,o2,o3,o4,o5,o6,o8,o9,o10,o12,o14,o15,bl1,o18,bl2,bl2b,bl2c,bl3,bl4,bl5,bl6,bl7,bl8,bl9,bl10,bl11,bl12,bl13,bl14,bl15,bl16,bl19,bl17,bl18,bl20,bl21,bl22,bl23}
+\bibliographystyleblogs{cj}
+\bibliographyblogs{papers}
+
+
+\subsection{Book details}
+
+I have co-authored two statistical books with Prof Annette Dobson.
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item \href{http://www.crcpress.com/product/isbn/9781584889502}{An Introduction to Generalized Linear Models}
+\begin{list}{\labelitemii}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.3\baselineskip}
+\item 4,700 citations (Google scholar)
+\item 4th edition published in 2018
+%\item Sales for the 3rd edition were 2,500 from May 2008 to Dec 2009 $\approx$ 125 copies per month
+\item Review by Erica E.\ M.\ Moodie (McGill University) in the \textit{Journal of Biopharmaceutical Statistics}, ``This book is an excellent resource, either as an introduction to or a reminder of the technical aspects of generalized linear models, and it provides a wealth of simple yet useful examples and datasets.''
+\item Recommended reading for ``Applied Statistics'' MAN414 (Coordinator Dr Helen Thompson); rated 5/5 in LEX, semester 2, 2009
+\item Rated 4.6 out of 5 on Amazon.com based on 8 customer reviews; customer comment: ``the most clearly written book on the topic''
+\item Suggested further reading on \textit{Wikipedia} page ``Generalized Linear Models''
+\item Has \textit{R} package containing all the data sets \href{http://cran.r-project.org/web/packages/dobson/index.html}{``dobson''}. Over 10,400 downloads (May~2018). % See my.cran.downloads.r in Rcode folder
+\end{list}
+\item \href{http://www.springer.com/statistics/stats+life+sci/book/978-3-642-10747-4}{Analysing Seasonal Health Data}
+\begin{list}{\labelitemii}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.3\baselineskip}
+\item 170 citations (Google scholar)
+\item The first book to explain how to analyse seasonal data for a medical audience
+\item Contains many new methods for uncovering seasonal patterns
+% See download.cran.stats.R to update download statistics
+\item Has an associated \textit{R} software package \href{http://cran.r-project.org/web/packages/season/index.html}{season} written with Dr Peter Baker (UQ). Over 38,700 downloads (May~2018).
+\item Featured in news items in the Daily Telegraph, South African Sports Radio and ABC~612
+%\item Suggested further reading in \textit{Wikipedia} pages on ``Seasonality'' and ``Seasonal variation''
+\item Review by M.\ C.\ Borja in \textit{Significance}, ``A useful book on an important subject and I would recommend it to anybody interested in the analysis of seasonal data''
+\end{list}
+\end{list}
+
+\subsection{Research funding}
+
+\subsubsection*{Successful chief investigator grants (total funds = \$10.0 million)} %159836+40000+165000+49042+59574+106375+500000+400000+408693+59500+308510+362224+276344+14701+1269867+1146817+498228+41000+2491450+69000+20000+295156+(82000*1.1) + 631370 + 47872+504187%
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+
+\item National Environment Protection Council ``Expansion of the Multi-City Mortality and Morbidity Study'' CIA: Prof Rod Simpson (University of the Sunshine Coast) my role: CIE (study design, data management, statistical support, report writing) \$159,836, 2003
+
+    Two highly cited publications \citepapers{a15,a16} and 3 conference papers \citeconf{c0,c1,c2}.
+
+\item CellCept Australia Research Grants ``The implications of Brain Death in Donor Lung Injury: Investigation and Blockade of the Endothelin Axis'', CIA: A/Prof John Fraser (Prince Charles), my role: CIG (statistical support), \$40,000, 2008
+
+\item Australian Red Cross Blood Service ``A Pilot Study to Assess the Suitability of an Ovine Model for the Investigation of Adverse Transfusion Reactions'', CIA: A/Prof John Fraser (Prince Charles \& UQ), my role: CIF (statistical support), \$165,000, 2008--2009
+
+\item The Prince Charles Hospital Foundation ``A Pilot Study to Assess the Suitability of an Ovine Model for the Investigation of Adverse Transfusion Reactions'', CIA: A/Prof John Fraser (Prince Charles \& UQ), my role: CIF (statistical support), \$49,042, 2009--2010
+
+\item The Prince Charles Hospital Foundation ``Direct extubation onto high flow nasal prongs post cardiac surgery vs standard treatment in patients with BMI~$\geq$~30: A randomised controlled trial.''  CIA: Amanda Corley (Prince Charles), my role: CID (statistical support), \$59,574
+
+\item Queensland Emergency Medicine Research Foundation ``Optimisation of cardiac output in emergency patients through non invasive cardiac output monitoring in the acute resuscitation phase. What does it add?'', CIA: Dr Neil Grant (Prince Charles), my role: CIG (statistical support), \$300,000, 2010--2012,
+
+\item Queensland Emergency Medicine Research Foundation ``C.R.A.S.H. study: A randomised study of tissue oxygenation in an ovine model of haemorrhagic shock comparing the effect of colloid, fresh red cells, aged red cells and saline.'', CIA: Dr Andrew Staib (Princess Alexandra \& UQ), my role: CIG (statistical support), \$106,375, 2010
+
+% 553081
+\item NHMRC Partnership ``Evaluating hand hygiene interventions and their ability to reduce healthcare associated infection'', CIA: A/Prof Nicholas Graves (QUT), my role: CIF (study design, statistical analysis, report writing), \$500,000 in cash from NHMRC, \$400,000 in cash from ACSQHC, \$408,693 in kind from state and territory governments, 2010--2012.
+
+    Publications: \citepapers{a94,a120,a131,a141,a152,a165,a168,a174,a188,a192}.
+
+\item AusAID ``Are community based infection surveillance and control interventions effective in identifying and responding to emerging zoonotic infectious diseases in developing countries?'', CIA: Dr Kate Halton (QUT), my role: CIB (statistical analysis), \$59,500, 2011
+
+    Publication: \citepapers{akate}.
+
+% APP1023735
+\item NHMRC Project ``Building an evidence base for funding evidence-based medicine'', CIA: Adrian Barnett (QUT), \$308,510, 2011--2012, \textbf{Rated Category 6} (top 8.5\% of proposals)
+
+    Publications: \citeletters{e19}, \citepapers{a126,a139,HAQ,a154,a156,a161,a163,a205}, \citeblogs{o10,o12}.
+
+\item NHMRC Project ``Identifying a cost-effective approach to MRSA control in Australia'', CIA: Dr Kate Halton (QUT), my role: CID (statistical analysis), \$362,224 2011
+
+\item NHMRC Project ``Modelling the cost-effectiveness of therapeutic strategies for invasive candidiasis among the ICU population'', CIA: Prof Nick Graves (QUT), my role: CID (statistical analysis), \$276,344 2011
+
+\item Australian College of Critical Care Nurses ``High flow nasal cannula for respiratory support in adult intensive care patients. Australian College of Critical Care Nurses'', CIA Amanda Corley (Prince Charles), my role: CIE (statistical support), \$14,701, 2012
+
+%Publication: \citepapers{o7}.
+
+% Gavin Turrell, Nancy Ann Pachana, A/Pr Adrian Gerard Barnett, Prof Billie Wilma Giles-Corti, Prof Wendy J Brown
+% Turrell, Pachana, Barnett, Giles-Corti, Brown
+\item NHMRC Project ``A longitudinal multilevel study of physical activity, sedentary behaviour and physical function in mid-to-late adulthood'', CIA: Prof Gavin Turrell (QUT), my role: CIE (statistical analysis), \$1,269,867 2012
+
+Publication: \citepapers{a200}.
+
+\item CAR seed funding ``Estimating the Australian burden of disease due to air pollution'', CIA: Sam Clifford, \$19,994, 2013.
+
+\item AusHSI Stimulus Grant ``Saving blood and money – introduction of laboratory testing guidelines and its effect on blood loss and cost of therapy in an intensive care unit'', CIA: Jayesh Dhanani, \$41,000, 2013.
+
+Publication: \citepapers{a210}.
+
+Won a quality and safety award for the Royal Brisbane and Women's Hospital
+
+% APP1076006
+% Prof Nick Graves Dr Lisa Hall, Dr Katie Michelle Page, Prof Anne Gardner, A/Pr Adrian Gerard Barnett, A/Pr Brett Gerard Mitchell
+% Graves, Hall, Page, Gardner, Barnett, Mitchell
+\item NHMRC Partnership ``REACH: Researching Effective Approaches to Cleaning in Hospitals'', CIA: Nick Graves, my role: CIE (statistical analysis), \$1,146,817, 2014--2017.
+
+    Publications: \citepapers{a177, a188, a201, a230, a237, a244}.
+
+\item Queensland Government Accelerate Partnerships ``CHERISH: better, cheaper hospital care'', CIA: Alison Mudge, my role: CI (statistical analysis and study design), \$498,228 % not sure of dates, 2014--2017.
+
+    Publications: \citepapers{a207b, a226}.
+
+% APP1079421, announced Oct 2014
+%  Prof John Francis Fraser Dr Vincent Pellegrino, A/Pr Adrian Gerard Barnett, Prof Paul Gerard Bannon, Prof David Charles Mcgiffin
+%  Fraser, Pellegrino, Barnett, Bannon, Mcgiffin
+\item NHMRC Centre for Research Excellence ``Centre for Research Excellence in Advanced Cardio-respiratory Therapies Improving OrgaN Support (ACTIONS)'', CIA: John Fraser, my role: CIG (statistical support and student training), \$2,491,450, 2015--2019
+
+% Barnett, Platts, Stewart, Fraser, awarded June 2015
+\item Heart Foundation Vanguard Grant ``Using thermal clothing to reduce morbidity during winter'', my role: CIA, \$69,000, 2015--2016
+
+   Publication: \citepapers{a203}.
+
+   % PG0115, awarded April 2015
+\item Cerebral Palsy Alliance ``Researching the impact of cerebral palsy research'', my role: CIA, \$20,000, 2015--2016
+
+   Publication: \citepapers{a187}.
+
+% DP160103059, announced late 2015
+\item ARC Discovery ``Occupational injury prevention in high temperature environments'', CIA: Prof Dino Pisaniello (Adelaide), my role: CIC, \$295,156, 2015--2016
+
+   Publications: \citepapers{a229,a239,a241}.
+
+% CRRP2016-10MY-Huang, announced June 2016, not in RGMS or qut system
+\item Asia-Pacific Network for Global Change Research ``Assessing the Health Effects of Extreme Temperatures and the Development of
+Adaptation Strategies to Climate Change in the Asia-Pacific Region'', CIA: Dr Cunrui Huang (Sun Yat-sen University), my role: CIC, USD \$82,000, 2016--2017
+
+% APP1117784, announced Sep 2016
+% https://eprints.qut.edu.au/98764/ % APP1117784
+\item NHMRC Senior Research Fellowship~A ``Meta-research: Using research to increase the value of health and medical research'', \$631,370, 2017--2021
+
+   Publications: \citepapers{a198,a211,a215,a217,a218,a227,a238,a239,a246,a247,a248}
+
+% August 2017; added to RGMS
+\item The Prince Charles Hospital Foundation ``Evaluating and improving the funding processes of The Prince Charles Hospital Foundation'', \$47,872, 2017--2018
+
+% APP1151923, Feb 2018
+\item NHMRC Partnership ``Reducing Non-Beneficial Treatment at the End-of-Life'', CIA: Nick Graves, my role: CIH, \$504,187, 2018--2020
+
+% APP1175567, Announced June 2019
+\item NHMRC Medical Research Future Fund Keeping Australians Out of Hospital ``LOCal Assessment and Triage Evaluation of NAFLD (LOCATE-NAFLD)'', CIA: Adrian Barnett, \$969,193, 2019--2022, \textbf{Rated Category~6}
+
+
+\end{list}
+
+
+\subsubsection*{Notable successful associate investigator grants (total funds = \$4.3 million)} % 1843149+2499061
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+
+\item ARC ``Quantifying the effects of criteria air pollutants on child health - setting Australian air quality standards'' \$504,924, 2003
+
+    This grant supported the funds from the National Environment Protection Council grant (see above) which led to 2 high impact publications \citepapers{a15,a16} and 3 conference papers \citeconf{c0,c1,c2}.
+
+\item NHMRC Project Grant ``Talking the walk: A longitudinal study of refugee men's health and resettlement'' CIA: Ignacio Correa-Velez (La~Trobe), \$420,250, 2008--2011. Data collection will be complete in May and we will start to analyse the results soon after.
+
+    Published paper: \citepapers{a61}.
+
+%\item NHMRC Project Grant ``Hyperpolarised Helium MRI to quantify regional lung damage and ventilation for improvement of recruitment strategy'' %CIA: John Fraser (Prince Charles Hospital), \$437,500, 2008--2010.
+
+\item NHMRC Project Grant ``Helping women meet their activity goals: randomised trial of a personalised program delivered by mobile telephone'' CIA: Alison Marshall (QUT), \$480,475, 2010--2012.
+
+    Published paper: \citepapers{a153}.
+
+\item NHMRC Project Grant ``The unholy alliance between extracorporeal circuitry and transfusion medicine: characterising inflammation and injury'' CIA: John Fraser (Prince Charles Hospital), \$929,299, 2011--2013.
+
+% APP1061404
+\item NHMRC ``Centre for Research Excellence in Healthy, Liveable and Equitable Communities'' CIA: Billie Giles-Corti (Uni of Melbourne), \$2,499,061, 2013--2018.
+
+\item Prince Charles Hospital Foundation ``Silent and Apparent Neurological Injury In Transcatheter Aortic Valve Implantation (SANITY) Study'' CIA: John Fraser (Prince Charles Hospital), \$99,272, 2014.
+
+\item Asia-Pacific Network for Global Change Research. ``Scoping Workshop to Develop Proposal: Assessing the Health Effects of Extreme Temperatures and the Development of Adaptation Strategies to Climate Change in the Asia Pacific Region'' CIA: Cunrui Huang, \$12,000, 2014.
+
+\item German Research Foundation Fellowship, Martin Wolkewitz, ``Statistical insights into spatio-temporal variation in transmission dynamics of hospital-acquired infections using individual patient data'' 259,800
+Euros, 2011--2013 and re-funded for 2014--2016.
+
+    Published papers: \citepapers{a134,a138,a143,a183}.
+
+\end{list}
+
+\subsection{Research students}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item Ignacio Correa-Velez, PhD: Graduated April 2004, Evaluation of complementary and alternative medicine use in palliative care. My percent contribution:~30\%.
+
+Published paper: \citepapers{a30}. In 2006 Ignacio was awarded a 4-year National Health and Medical Research Council (NHMRC) Postdoctoral Research Fellowship (La Trobe). He is the chief investigator of a new investigator NHMRC project grant in 2007 titled, ``Talking the walk: A longitudinal study of refugee men's health and resettlement'' for \$420,250. I was an associate investigator on this grant and have been involved in the project. This has led to a published paper: \citepapers{a61}.
+
+\item Jo-An Atkinson, MSc: Graduated December 2005, Efficacy of paper tape in preventing hypertrophic scar formation. My percent contribution:~40\%.
+
+Published paper: \citepapers{a2}. Jo won the Sir Ian McFarlane award at the Royal Brisbane Hospital research conference (2004). Jo is an associate professor at the Sax Institute.
+
+\item Darren Gray, PhD: Awarded June~2008, The role of bovines in human schistosoma japonicum transmission in the the Peoples' Republic of China. My percent contribution:~10\%.
+
+Published papers: \citepapers{a35,a36}. Darren is currently a Professor at ANU.
+
+\item Letitia Burridge, PhD: Graduated December~2009, The experience of becoming a lay carer for a person with cancer. My percent contribution:~15\%. Dean's Award for Outstanding Research Higher Degree Theses in 2009.
+
+Published paper: \citepapers{a22}. Letty now works as a postdoctoral researcher in the department of General Practice, UQ.
+
+\item Linn Strand, MPhil: Graduated Dec~2011, The influence of ambient temperature on birth outcomes in Brisbane, Australia. My percent contribution:~80\%.
+
+Published papers: \citepapers{a73,a76,a78}. Linn is now a postdoc at the Norwegian University of Science and Technology.
+
+\item Kathryn Plonka, PhD: Graduated~2012, Preventive strategies for Early Childhood Caries from Antenatal to age 24 months. My percent contribution:~10\%.
+
+Published papers: \citepapers{a75,a90,a96,a97,a103,a115}. Video: \url{http://www.uq.edu.au/grad-school/3mt-kathryn-plonka}
+
+\item Jim Zhao, PhD: Graduated~2011, Economic evaluation of strategies for improving maternal and neonatal health in the Safe Motherhood Project of China. My percent contribution:~20\%.
+
+% when did margaret graduate?
+\item Margaret Pukallus, MPhil: Graduated~2010, A longitudinal study of oral streptococci in mothers and their infants: the effect of intervention strategies. My percent contribution:~5\%.
+
+Published papers: \citepapers{a90,a96,a104,a113}.
+
+\item Yuming Guo, PhD: Graduated December~2012, Projecting the health benefits of decreasing vehicle use in Brisbane. My percent contribution:~75\%. Yuming is currently an associate professor at Monash University.
+
+Published papers: \citepapers{a62,a66,a67,a70,a84,a112,a116}. % Not 119, part of post-doc
+
+\item Cunrui Huang, PhD: Awarded February~2013, The health effects of temperature: current estimates, future projections and adaptation strategies. My percent contribution:~70\%.
+
+Published papers: \citepapers{a83,a89,a109,a121}. Cunrui was awarded a QUT \textbf{Outstanding Doctoral Thesis Award} in 2013. Cunrui won a Research Fellowship at Griffith University in 2013.
+
+%\item Sophie Miller, PhD: Started Feb~2010, The mental health impact of the 2011 Brisbane floods . My percent contribution:~5\%.
+
+%\item Huong Tran Cam, PhD: Started Jun~2011, Location of residence and childhood temperament: Defining the possible role of Vitamin~D together with environmental factors during pregnancy. My percent contribution:~40\%.
+
+% started Feb 2013
+\item Xing Ju Lee, PhD: Awarded Mar~2017, Modelling VRE Transmission Routes to identify cost-effective intervention strategies. My percent contribution:~5\%.
+
+% ? quit??
+%\item Beatrice Sim, MPhil: Started May~2013. Risk of Nosocomial Infections with Age of Blood: A Retrospective Study. My percent contribution:~25\%.
+
+% Started September~2013
+% now researcher with the Research System and Science Dynamics research area of the German Centre for Higher Education Research and Science Studies
+\item Dimity Stephen, PhD: Awarded June~2017, Putting a price on climate change: The health and economic costs of increases in infectious diseases in Queensland due to climate change. My percent contribution:~90\%. Dimity is currently a researcher at the German Centre for Higher Education Research and Science Studies.
+
+Published papers: \citepapers{a176,a197}
+
+%\item Matthew Tunbridge, ?
+
+\item Marc Nickels, PhD: Started 2014, Early rehabilitation in intensive care units. My percent contribution:~5\%.
+% awarded a Princess Alexandra Research Support Scheme Postgraduate Scholarship (Nov 2016)
+
+Published paper: \citepapers{a202,a243}
+
+\item Yupin Crawford, Masters: Started 2014, The cost-effectiveness of gold standard Venous Thromboembolism prophylaxis as compared to current practice. My percent contribution:~5\%.
+
+\item Anisa Rowhani-Farid, PhD: Awarded July~2018, Open science and data sharing movement in scientific research. My percent contribution:~80\%. Anisa is currently a Postdoctoral Fellow at the University of Maryland.
+
+Published papers: \citepapers{a184, a196, a215}
+
+% Started June 2015
+\item Victoria McCreanor, PhD: Awarded June~2019, Identifying high-value care for coronary artery disease in Australia. My percent contribution:~5\%. Victoria is currently a research fellow at AusHSI and the Jamieson Trauma Institute.
+
+Published papers: \citepapers{a224,a245}
+
+\item Akwasi Bonsu Asumadu-Sakyi, PhD: Started March~2015, Indoor temperature profile and its influence on indoor air pollution in urban residential settings in a subtropical climate. My percent contribution:~5\%.
+
+Published paper: \citepapers{a235,a240}
+
+%\item Piotr Swierkowski, PhD (part-time): Started November~2015, Stochastic statistical analysis of patient-level hospital costs. My percent contribution:~80\%.
+% Published paper: \citepapers{a225}
+
+\item Nina Lazarevic, PhD: Started February~2016, Methodological issues in the study of fetal co-exposures to endocrine disrupting chemicals. My percent contribution:~5\%.
+
+ Published paper: \citepapers{a232}
+
+% Nina Won a Health Practitioner Research Scheme 2018 funding round ($29,636, announced Dec 2017)
+\item Nina Meloncelli, PhD: Started February~2016, Gestational diabetes mellitus: Examining diversity in practices, impact of clinical guidelines and the implementation of a dietitian-led model of care. My percent contribution:~10\%.
+
+Published paper: \citepapers{a216,a242}
+
+\item Louise Barnsbee, Masters: Started March~2017, Perceptions of Australian Health Services Researchers regarding evaluation of the impact of their research. Won a QUT scholarship in November~2018. My percent contribution:~50\%.
+
+% I started with Lee in Oct 2018
+\item Lee Jones, PhD: Started Oct~2018, Investigating relationships between statistical quality and research culture. My percent contribution:~40\%.
+
+% I started with Sameera in May 2019; NEED TO UPDATE HIS START DATE
+\item Sameera Senanayake, PhD: Started Oct~2018, Using machine learning techniques to develop risk prediction models to predict graft failure following kidney transplantation. My percent contribution:~20\%.
+
+\end{list}
+
+Mentoring:
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item Anders Erickson, Medical Sciences \& Geography, University of Victoria, Canada. International Society for Environmental Epidemiology Students \& New Researchers Network. May~2014.
+% I am acknowledged here http://www.ncbi.nlm.nih.gov/pubmed/27079512
+%Anders completed in August 2016.
+\item Tea Espeland Uggen. ACEMS. 2018.
+\end{list}
+
+\subsection{International visitors}
+
+\begin{itemize}% Add LSHTM girl?
+  \item[2014] Chisato Imai, Nagasaki University, Endeavour Cheung Kong Research Fellowship (top~5 international and Australian recipients coming from/going to a Cheung Kong participating country), paper: \citepapers{a179}
+  \item[2012] David Hondula, Virginia, USA, East Asia and Pacific Summer Institutes fellowship, National Science Foundation, paper: \citepapers{a140}
+  \item[2011] Laila Hopstock, University of {T}roms{\o}, Norway, university scholarship, paper: \citepapers{a107}
+  \item[2010] Martin Wolkewitz, Freiburg University, Germany, paper: \citepapers{a68}
+\end{itemize}
+
+\subsection{Awards and scholarships}
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item \href{https://journals.lww.com/epidem/Fulltext/2018/03000/Thanks_to_Our_Reviewers.26.aspx/}{Exemplary reviewer} for \textit{Epidemiology} (2018)
+\item Queensland University of Technology, Vice-chancellor's performance award for excellence in supervision \$6,000
+(2015)
+\item Queensland University of Technology, Vice-chancellor's team performance award for AusHSI - nominated
+(2015)
+\item Queensland University of Technology, Vice-chancellor's performance award \$6,000
+(2013)
+\item \href{http://journals.lww.com/epidem/Fulltext/2014/05000/Thanks_to_Our_Reviewers.1.aspx}{One of 6 reviewers of the year} for \textit{Epidemiology} (2014)
+\item \href{http://ehp.niehs.nih.gov/122-A37/}{One of 9 reviewers of the year} for \textit{Environmental Health Perspectives} (2013)
+\item Runner-up best environmental epidemiology paper published in 2012 (Awards Committee Chair: Michael Brauer, University of British Columbia) \citepapers{a78} %http://www.ehbasel13.org/english/cfa_journals.php
+\item Best original article published in Vox Sanguinis (2011), 10,000 Euros, paper: \citepapers{a64}
+\item One of 11 reviewers of the year for \textit{Environmental Health Perspectives}
+\item \href{http://ehp03.niehs.nih.gov/article/fetchArticle.action?articleURI=info%3Adoi%2F10.1289%2Fehp.119-a59}{One of 12 reviewers of the year} for \textit{Environmental Health Perspectives}
+\item Queensland University of Technology, Vice-chancellor's performance award \$5,000
+(2010)
+\item Queensland University of Technology, nominated for the Vice-chancellor's award for excellence
+(2010)
+\item University of Queensland, School of Population Health, School's Research Incentive Scheme
+\$2,500 (Mar 2005)
+\item UQ Dean of Engineering, Physical Sciences and Architecture award for Best PhD (2002)
+\item Commonwealth Government Department of Education, Science \& Training International
+Postgraduate Research Scholarship (1999).
+\end{list}
+
+\subsection{Refereeing}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.4\baselineskip}
+\item Statistics Advisor \textit{Journal of Telemedicine and Telecare} 2007--2016, renewed 2015
+\item Editorial Review Board of \textit{Environmental Health Perspectives} 2011--2016; promoted to Associate Editor Board 2016--2018
+\item Editorial Board of \textit{Epidemiology} 2013--2017, renewed 2015, 2016 and 2018
+\item Statistical Advisory Board \textit{BMJ Open} 2013--present
+\item Scientific Review committee for the \href{http:www.aushsi.org.au}{Australian Centre for Health Services Innovation} (2012--present).
+\item External reviewer for 9 NHMRC Project Grants (2008--2017).
+\item Reviewed 47 papers for \textit{Circulation} as a paid reviewer (USD \$50 per review)
+\item Reviewed grants for funding agencies in Australia, the Czech Republic, Hong Kong, Israel and UK
+\end{list}
+
+% New May 2018
+\subsection{Web pages}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.4\baselineskip}
+	\item \textit{shiny} web page to help researchers compile their publication lists: \url{https://aushsi.shinyapps.io/orcid/}. Is heavily used and was in the 2017 Instructions to Authors for the Australian Research Council.
+	\item \textit{shiny} web page to help researchers create a network diagram of their publications: \url{https://aushsi.shinyapps.io/work-pals/}.
+\end{list}
+
+%%%%%% Teaching %%%%%%
+\section{Teaching}
+
+\subsection{Lecturing, tutoring and co-ordination}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item Coordinator, Advanced Research Methods: QUT, internal, 44~undergraduate
+students, 12 lectures, teaching satisfaction by 12 students 4.7 out of 5 (2011)
+\item Coordinator, Health Statistics: QUT, external, 59~postgraduate
+students, teaching satisfaction by 4 students 3.0 out of 5 (2011)
+\item Guest lecturer, Advanced Quantitative Research Methods: QUT, internal, postgraduate
+students, 2 lectures, teaching satisfaction by 5 students 4.6 out of 5 (2009)
+\item Coordinator, Advanced Quantitative Research Methods: QUT, internal, postgraduate
+students, teaching satisfaction by 14 students 4.1 out of 5 (2008)
+\item Coordinator, Health Statistics: QUT, external and internal, postgraduate students, teaching
+satisfaction by 10 students 4.7 out of 5 (2008)
+\item Lecturer, Introduction to Biostatistics: UQ, external and internal, postgraduate students,
+overall evaluation by 20 students 4.5 out of 5 (2007)
+\item Lecturer, Clinical Biostatistics, Biostatistics Collaboration Australia: UQ, external,
+postgraduate students, overall evaluation by 13 students 4.0 out of 5 (2006--2007)
+\item Lecturer, Measuring Population Health: UQ, postgraduate epidemiologists, overall evaluation
+by 11 students 4.3 out of 5 (2003)
+\item Tutor, Statistical Data Analysis 1: QUT, 1st year science and arts students, overall evaluation
+by 43 students 4.5 out of 5 (1999--2002)
+\item Tutor \& Lecturer, Applied Statistics 2: QUT, 2nd year science students, overall evaluation by
+23 students 4.2 out of 5 (1999)
+\item Demonstrator: QUT Science Train (1999)
+\item Tutor, Introduction to Statistics: Royal London Hospital, 1st year medical students (1998)
+\end{list}
+
+
+%% policy %%
+\section{Policy}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.4\baselineskip}
+\item Science and Technology Australia policy committee (2019)
+\item Research used in a speech to parliament by Prime Minister Tony Abbott (Mar~2014)
+\item Research cited and quoted in McKeon review of health and medical research (Mar~2014)
+\item Workshop on Resource Condition Targets in Brisbane by South East Queensland Natural Resource Management (Apr~2008)
+\item Expert review of the Queensland Greens' document on the health effects of air pollution (Aug~2008)
+\item NHMRC workshop in Canberra (flights and expenses paid) on air quality in and around traffic tunnels (May~2007)
+\item Critique of Queensland government report on the health effects of the Boggo Road Busway for a Brisbane parents' group (Jul~2007)
+\item Critique of Queensland government report on the health effects of the Hale Street Bridge for a Brisbane parents' group (Oct~2006)
+\end{list}
+
+\section{Professional activity}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.4\baselineskip}
+\item Mathematical Sciences Cluster representative on the board of Science and Technology Australia (2018--)
+\item President Statistical Society of Australia (2018--)
+\item Vice President Statistical Society of Australia (2017--2018)
+\item Expert witness at the Hazelwood mine fire inquiry (2015)
+\item Pitman Medal Awards Committee, Statistical Society of Australia (2012, 2014, 2016), re-appointed 2016
+\item President Queensland Branch Statistical Society of Australia (2011--2013)
+\item Member Queensland Branch Council, Statistical Society of Australia (1999--2000, 2010--)
+\begin{list}{\labelitemii}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.4\baselineskip}
+%\item Organised a session for the national conference in 2004, which included Prof Peter Diggle
+%\item Presented at the Christmas debate in 2009, ``Bayesians vs Frequentists'', and was on the winning team!
+%\item Attended branch and council meetings.
+\item Organised a half-day meeting on meta-analysis at QUT for June 2010, attended by over 80 researchers.
+\item Represented the society at Science Meets Parliament in 2011 and met with senator Sue Boyce
+\end{list}
+\item Expert advisory panel for the \textit{Queensland Evaluation Group} evaluating submissions for the Australian \textit{Pharmaceutical Benefits Schedule} (2006--2007)
+\item Twitter \href{https://twitter.com/aidybarnett}{aidybarnett}
+\item Github \href{https://github.com/agbarnett}{agbarnett}
+\end{list}
+
+% Add signature
+%\includegraphics[height=1.5cm,width=5.9cm,angle=0]{AGB.eps} 
+
+\end{raggedright}
+\end{document}
+
+\section{Referees}
+\begin{tabular}{lll}
+Professor Annette Dobson &&Professor Nick Graves\\
+School of Population Health &&Institute of Health and Biomedical Innovation\\
+The University of Queensland &&Queensland University of Technology\\
+Herston Road &&60 Musk Avenue\\
+Herston QLD 4006 &&Kelvin Grove QLD 4059\\
+phone: (07) 3365 5346 &&phone: (07) 3138 6117\\
+e-mail: a.dobson$<$at$>$sph.uq.edu.au&&e-mail: n.graves$<$at$>$qut.edu.au\\
+\end{tabular}
+
+
+%% dumped
+% From citations_plot.R
+\textbf{Bar chart of my citations over time (Web of Science)}
+\begin{tabular}{|p{16.5cm}|}\hline
+\includegraphics[height=7cm,width=16cm,angle=0]{citations.eps}\\
+\hline
+\end{tabular}
+
+\vspace{2mm}
+
+The bar chart above shows my citation numbers over time (to August 2012). I have been cited a total of 1240 times.
