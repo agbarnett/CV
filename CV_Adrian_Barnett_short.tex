@@ -1,0 +1,102 @@
+% CV - short version (2 pages); past 3 years
+% updated Nov 2015
+\documentclass[a4paper,11pt]{article}
+\usepackage{graphicx} % For graphics
+\usepackage[resetlabels]{multibib} % For multiple reference lists
+\usepackage{anysize} % margins
+\usepackage{color}
+\usepackage{fancybox} % For boxed key
+\usepackage{hyperref} % URL references
+\usepackage{bibspacing} % spacing between references
+\setlength{\bibspacing}{\baselineskip} % spacing between references
+\marginsize{2cm}{2cm}{2cm}{2cm} % margins, {left}{right}{top}{bottom}
+\setlength\parskip{0.01mm} % change the gap between paragraphs
+
+\markboth{Prof Adrian Barnett - Short Curriculum Vitae}{Prof Adrian Barnett - Short Curriculum Vitae}
+
+%%% change sections %%%
+\makeatletter
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries\color{blue}}}
+\makeatother
+\makeatletter
+%%% change subsections %%%
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                       {-3.25ex \@plus -1ex \@minus -.2ex}%
+                                       {1.5ex \@plus .2ex}%
+                                   {\normalfont\normalsize\bfseries\color{blue}}}
+\makeatother
+
+%%% change bullets %%%
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\star$}
+
+% re-arrange order here to get multiple bibtex
+\newcites{papers}{Selected peer-reviewed papers since 2018}
+
+\pagestyle{myheadings}
+
+%
+\begin{document}
+\begin{raggedright}
+
+%%%%%%%%%
+
+\begin{center}
+\textbf{Adrian Gerard Barnett} PhD, AStat, BSc (Hons)
+\end{center}
+
+\textbf{Professor}: Institute of Health and Biomedical Innovation \& School of Public Health, Queensland University of Technology, Feb~2017 to present
+
+\textbf{Associate Professor}: Institute of Health and Biomedical Innovation \& School of Public Health, Queensland University of Technology, Aug~2010 to Feb~2017
+
+Tel (work): 07-3138 6010, Twitter: @aidybarnett
+E-mail: a.barnett$<$at$>$qut.edu.au
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+\item PhD Mathematics: University of Queensland, December 2002
+\item Bachelor of Science with First Class Honours in Statistics: University College London, 1994
+\end{list}
+
+% Articles (cite in order of date)
+\label{papersstart}
+\nocitepapers{a225,a226,a227,a229,a231,a239,
+	a228,a232,a234,a230,a235,a236,a237,a238,a240,a241,a242,a243,a244,a245,a246,a247,a248}
+\bibliographystylepapers{cj}
+\bibliographypapers{papers}
+\label{papersstop}
+
+\section*{Selected research funding since 2015}
+
+\begin{list}{\labelitemi}{\leftmargin=1.2em}\addtolength{\itemsep}{-0.5\baselineskip}
+
+\item NHMRC Medical Research Future Fund Keeping Australians Out of Hospital ``LOCal Assessment and Triage Evaluation of NAFLD (LOCATE-NAFLD)'', CIA: Adrian Barnett, \$969,193, 2019--2022, \textbf{Rated Category~6}
+
+% APP1151923, Feb 2018
+\item NHMRC Project, ``Reducing Non-Beneficial Treatment at the End-of-Life'', CIA: Adrian Barnett, \$504,187, 2018--2020
+
+% APP1076006
+\item NHMRC Partnership ``REACH: Researching Effective Approaches to Cleaning in Hospitals'', CIA: Nick Graves, my role: CIE (statistical analysis), \$646,817, 2014--2017.
+
+\item Queensland Government Accelerate Partnerships ``CHERISH: better, cheaper hospital care'', CIA: Alison Mudge, my role: CI (statistical analysis and study design), \$498,228 % not sure of dates, 2014--2017.
+
+\item NHMRC Senior Research Fellowship~A ``Meta-research: Using research to increase the value of health and medical research'', \$631,370, 2017--2021
+
+% APP1079421
+%\item NHMRC Centre for Research Excellence ``Centre for Research Excellence in Advanced Cardio-respiratory Therapies Improving OrgaN Support (ACTIONS)'', CIA: John Fraser, my role: CI (statistical support and student training), \$2,491,450, 2015--2019
+
+% DP160103059
+\item ARC Discovery ``Occupational injury prevention in high temperature environments'', CIA: Prof Dino Pisaniello (Adelaide), my role: CIC, \$295,156, 2015--2016
+
+\end{list}
+
+% Signed version
+
+\includegraphics[height=2cm,width=5cm,angle=0]{AGB.eps}
+
+22 January 2020
+
+\end{raggedright}
+\end{document}
