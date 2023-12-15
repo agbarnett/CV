@@ -1,3 +1,3 @@
 # CV
 
-A place to store the PDF of my CV.
+My LaTeX CV and PDF.
